@@ -1,0 +1,53 @@
+import './companies/ars_futura.dart';
+import './companies/bornfight.dart';
+import './companies/cinnamon.dart';
+import './companies/degordian.dart';
+import './companies/five.dart';
+import './companies/infinum.dart';
+import './companies/martian.dart';
+import './companies/microblink.dart';
+import './companies/q_agency.dart';
+import './companies/uhp_digital.dart';
+import './companies/undabot.dart';
+
+Map jobsArsFutura;
+Map jobsBornfight;
+Map jobsCinnamon;
+Map jobsDegordian;
+Map jobsFive;
+Map jobsInfinum;
+Map jobsMartian;
+Map jobsMicroblink;
+Map jobsQAgency;
+Map jobsUhpDigital;
+Map jobsUndabot;
+
+List allJobs;
+
+Future getJobs() async {
+  jobsArsFutura = await getJobsArsFutura();
+  jobsBornfight = await getJobsBornfight();
+  jobsCinnamon = await getJobsCinnamon();
+  jobsDegordian = await getJobsDegordian();
+  jobsFive = await getJobsFive();
+  jobsInfinum = await getJobsInfinum();
+  jobsMartian = await getJobsMartian();
+  jobsMicroblink = await getJobsMicroblink();
+  jobsQAgency = await getJobsQAgency();
+  jobsUhpDigital = await getJobsUhpDigital();
+  jobsUndabot = await getJobsUndabot();
+
+  allJobs = [
+    jobsArsFutura,
+    jobsBornfight,
+    jobsCinnamon,
+    jobsDegordian,
+    jobsFive,
+    jobsInfinum,
+    jobsMartian,
+    jobsMicroblink,
+    jobsQAgency,
+    jobsUhpDigital,
+    jobsUndabot,
+  ];
+}
