@@ -32,6 +32,7 @@ It makes it easy to search for jobs from various IT companies based in Zagreb.
 - [ ] Make the **Categories** reflect the jobs without bundling everything in **home_page.dart**.
 - [ ] Refactor **search_results.dart** & **category_results.dart**.
 - [ ] Remove _hidden jobs_ from **UHP Digital**.
+- [x] Fix 'starting screen' and 'no jobs screen' sometimes sticking on screen 
 - [x] Implement **InfoScreen**.
 - [x] Put some text in the loading screen, showing the user that the jobs are getting fetched.
 - [x] Put all hardcoded text in **constants.dart**

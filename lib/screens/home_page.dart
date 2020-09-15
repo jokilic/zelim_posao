@@ -127,23 +127,26 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          // App has just started, show starting screen
-          if (appState == AppState.started)
-            CenterScreenWidget(
-              text: findJobString,
-              image: findJobImage,
-            ),
+          // Search query got some results, show the jobs
+          if (appState == AppState.positiveSearch)
+            SearchResults(allFilteredJobs),
+
+          // User pressed on a category, show jobs from desired company
+          if (selectedCategory != null) buildCategoryResults(),
+
           // Search query got no results, show 'No jobs found' screen
           if (appState == AppState.negativeSearch)
             CenterScreenWidget(
               text: noJobsString,
               image: noJobsImage,
             ),
-          // Search query got some results, show the jobs
-          if (appState == AppState.positiveSearch)
-            SearchResults(allFilteredJobs),
-          // User pressed on a category, show jobs from desired company
-          if (selectedCategory != null) buildCategoryResults(),
+
+          // App has just started, show starting screen
+          if (appState == AppState.started)
+            CenterScreenWidget(
+              text: findJobString,
+              image: findJobImage,
+            ),
         ],
       ),
     );
@@ -156,7 +159,6 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       appState = AppState.categoryScreen;
     });
-
     return CategoryResults(allJobs[selectedCategory]);
   }
 
