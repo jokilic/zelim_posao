@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zelim_posao/constants.dart';
 
 // Widget that is shown instead of job results
 //   - When the app is first loaded
@@ -23,7 +24,7 @@ class CenterScreenWidget extends StatelessWidget {
           Text(
             text,
             style: TextStyle(
-              fontFamily: 'Tiempos',
+              fontFamily: tiemposFont,
               fontSize: 30.0,
             ),
           ),

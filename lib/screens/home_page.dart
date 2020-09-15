@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../models/get_jobs.dart';
 import '../models/search_jobs.dart';
+import '../screens/info_screen.dart';
 import '../components/background_image.dart';
-import '../components/loading_screen.dart';
-import '../components/info_button.dart';
+import '../components/home_page/loading_screen.dart';
+import '../components/header_button.dart';
 import '../components/hero_section.dart';
-import '../components/search_jobs.dart';
-// import '../components/categories.dart';
-import '../components/center_screen_widget.dart';
-import '../components/category_results.dart';
-import '../components/search_results.dart';
+import '../components/home_page/search_jobs.dart';
+// import '../components/home_page/categories.dart';
+import '../components/home_page/center_screen_widget.dart';
+import '../components/home_page/category_results.dart';
+import '../components/home_page/search_results.dart';
 
 int selectedCategory;
 TextEditingController textEditingController = TextEditingController();
@@ -31,6 +32,8 @@ enum GettingJobs {
 }
 
 class HomePage extends StatefulWidget {
+  static const routeName = '/';
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -43,7 +46,7 @@ class _HomePageState extends State<HomePage> {
   void didChangeDependencies() async {
     super.didChangeDependencies();
 
-    // Because 'getJobs()' is async, I had to put it in 'didChangeDependencies()' instead of 'initState()'
+    // Because 'getJobs()' is an asynchronous function, I had to put it in 'didChangeDependencies()' instead of 'initState()'
     await getJobs();
     setState(() {
       gettingJobs = GettingJobs.no;
@@ -82,7 +85,18 @@ class _HomePageState extends State<HomePage> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          InfoButton(),
+          HeaderButton(
+            alignment: Alignment.centerRight,
+            icon: Icon(
+              Icons.info_outline,
+              color: textColor,
+              size: 32.0,
+            ),
+            onTap: () => Navigator.pushNamed(
+              context,
+              InfoScreen.routeName,
+            ),
+          ),
           HeroSection(),
           SearchJobs(
             // Gets called when the user searches for a job

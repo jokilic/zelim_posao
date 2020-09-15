@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class LoadingScreen extends StatelessWidget {
   @override
@@ -13,7 +13,7 @@ class LoadingScreen extends StatelessWidget {
         Text(
           fetchingJobsString,
           style: TextStyle(
-            fontFamily: 'Tiempos',
+            fontFamily: tiemposFont,
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
           ),
@@ -33,7 +33,7 @@ class LoadingScreen extends StatelessWidget {
             Text(
               gentlemanString,
               style: TextStyle(
-                fontFamily: 'Tiempos',
+                fontFamily: tiemposFont,
                 fontSize: 22.0,
                 fontWeight: FontWeight.bold,
               ),

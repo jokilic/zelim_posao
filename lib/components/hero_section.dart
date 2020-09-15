@@ -13,7 +13,7 @@ class HeroSection extends StatelessWidget {
           style: TextStyle(
             color: textColor,
             fontSize: 36.0,
-            fontFamily: 'Tiempos',
+            fontFamily: tiemposFont,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -22,7 +22,7 @@ class HeroSection extends StatelessWidget {
           style: TextStyle(
             color: textColor,
             fontSize: 16.0,
-            fontFamily: 'Tiempos',
+            fontFamily: tiemposFont,
           ),
         ),
       ],

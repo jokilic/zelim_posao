@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 // Shown when the user searches for jobs and it returns some results
 class SearchResults extends StatelessWidget {
@@ -47,7 +47,7 @@ class CompanyWithJobs extends StatelessWidget {
               style: TextStyle(
                 color: textColor,
                 fontSize: 28.0,
-                fontFamily: 'Tiempos',
+                fontFamily: tiemposFont,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -97,7 +97,7 @@ class CompanyJobs extends StatelessWidget {
               filteredJobs[numberOfCompanies]['jobs'][numberOfJobs],
               style: TextStyle(
                 color: textColor,
-                fontFamily: 'Rubik',
+                fontFamily: rubikFont,
                 fontSize: 22.0,
               ),
             ),

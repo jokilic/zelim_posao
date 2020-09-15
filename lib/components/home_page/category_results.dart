@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 // Results that are shown when pressing on any of the Categories (companies)
 class CategoryResults extends StatelessWidget {
@@ -28,7 +28,7 @@ class CategoryResults extends StatelessWidget {
                 style: TextStyle(
                   color: textColor,
                   fontSize: 28.0,
-                  fontFamily: 'Tiempos',
+                  fontFamily: tiemposFont,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -53,7 +53,7 @@ class CategoryResults extends StatelessWidget {
                         companyJobs['jobs'][numberOfJobs],
                         style: TextStyle(
                           color: textColor,
-                          fontFamily: 'Rubik',
+                          fontFamily: rubikFont,
                           fontSize: 22.0,
                         ),
                       ),

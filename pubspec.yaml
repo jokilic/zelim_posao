@@ -30,6 +30,7 @@ flutter:
     - family: Tiempos
       fonts:
         - asset: assets/fonts/Tiempos/TiemposHeadline-Medium.ttf
+
     - family: Rubik
       fonts:
         - asset: assets/fonts/Rubik/Rubik-Regular.ttf

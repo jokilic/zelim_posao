@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 // Categories with various companies that are shown below the Search Bar
 class Categories extends StatefulWidget {

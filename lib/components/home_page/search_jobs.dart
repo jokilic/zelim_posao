@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 // Search Bar that makes it possible to search for desired jobs
 class SearchJobs extends StatelessWidget {
@@ -37,7 +37,7 @@ TextStyle searchStyle() {
   return TextStyle(
     fontSize: 18.0,
     color: textColor,
-    fontFamily: 'Rubik',
+    fontFamily: rubikFont,
   );
 }
 

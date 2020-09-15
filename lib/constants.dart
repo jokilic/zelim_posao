@@ -9,6 +9,10 @@ const String searchJobsString = 'Pretraži poslove...';
 const String findJobString = 'Pronađite posao iz snova';
 const String noJobsString = 'Nema željenih poslova';
 
+// Fonts
+const String rubikFont = 'Rubik';
+const String tiemposFont = 'Tiempos';
+
 // Colors
 const Color textColor = Color(0xFF242424);
 const Color backgroundColor = Color(0xFFE9E9E9);
@@ -65,7 +69,7 @@ TextStyle searchStyle() {
   return TextStyle(
     fontSize: 18.0,
     color: textColor,
-    fontFamily: 'Rubik',
+    fontFamily: rubikFont,
   );
 }
 
@@ -77,3 +81,49 @@ InputDecoration inputDecoration() {
     contentPadding: EdgeInsets.all(16.0),
   );
 }
+
+// Info Screen
+const String whatIsThisTitleString = 'Što je ovo? 🤔';
+const String whatIsThisFirstString =
+    ' je jednostavna aplikacija napravljena u ';
+const String whatIsThisSecondString = 'Flutteru';
+const String whatIsThisThirdString = '.';
+const String whatIsThisFourthString =
+    '\n\nPretražuje određene IT firme te omogućuje jednostavno pretraživanje aktivnih oglasa za posao.';
+
+const String whyTitleString = 'Zašto? 🤷‍♀️';
+const String whyFirstString = 'Napravio sam ju iz dva razloga:';
+const String whySecondString = '1.';
+const String whyThirdString = ' Htio sam napraviti nešto novo koristeći ';
+const String whyFourthString = 'Flutter';
+const String whyFifthString = ' .';
+const String whySixthString = '2.';
+const String whySeventhString =
+    ' Tražim posao pa sam htio automatizirati proces.';
+
+const String howTitleString = 'Kako radi? 👷‍♂️';
+const String howFirstString = '1.';
+const String howSecondString =
+    ' Aplikacija dohvaća informacije sa službenih stranica firmi koje mi se sviđaju i u kojima bih htio raditi.';
+const String howThirdString = '2.';
+const String howFourthString =
+    ' Pronađe naslove poslova sa svih stranica i spremi ih u ';
+const String howFifthString = 'Map';
+const String howSixthString = ' od relevantne firme.';
+const String howFinalString =
+    'Korisnik može pretraživati poslove ili vidjeti sve poslove odabrane tvrtke.';
+
+const String ferdinandTitleString = 'Gospon Ferdinand? 🎩';
+const String ferdinandFirstString = 'Gospon Ferdinand';
+const String ferdinandSecondString =
+    ' je gospodin kojeg je lako uočiti u šetnji starim zagrebačkim ulicama.\nNajčešće nosi ';
+const String ferdinandThirdString = 'kuglasti šešir';
+const String ferdinandFourthString =
+    ' i uvijek je besprijekorno odjeven.\n\nOdlučio mi je pomoći u izradi ove aplikacije i na tome mu ';
+const String ferdinandFifthString = 'beskrajno zahvaljujem';
+const String ferdinandSixthString = '.\n\nVidite li ga kako bezbrižno šeće ';
+const String ferdinandSeventhString = 'Zagrebom';
+const String ferdinandEighthString =
+    ', a ovdje nema posla kojemu se nadate, spomenite mu da biste cijenili kad bi se malo više potrudio. 🙃';
+
+const String goodLuckString = 'Želim vam sreću u potrazi za željenim poslom!';
