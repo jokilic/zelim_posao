@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 import '../constants.dart';
 import '../models/get_jobs.dart';
 import '../models/search_jobs.dart';
 import '../components/background_image.dart';
+import '../components/loading_screen.dart';
 import '../components/info_button.dart';
 import '../components/hero_section.dart';
 import '../components/search_jobs.dart';
@@ -71,12 +70,7 @@ class _HomePageState extends State<HomePage> {
             child: gettingJobs == GettingJobs.no
                 ? buildScreen()
                 // Show loading screen when the jobs are getting fetched
-                : Center(
-                    child: SpinKitWanderingCubes(
-                      color: textColor,
-                      size: 50.0,
-                    ),
-                  ),
+                : LoadingScreen(),
           ),
         ),
       ),

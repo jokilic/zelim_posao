@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 // Strings
 const String appName = 'Želim posao!';
 const String belowTitleString = 'Pronađite posao za vas';
+const String fetchingJobsString = 'Trenutak, molim...';
+const String gentlemanString = 'Gospon Ferdinand traži poslove.';
 const String searchJobsString = 'Pretraži poslove...';
 const String findJobString = 'Pronađite posao iz snova';
 const String noJobsString = 'Nema željenih poslova';
@@ -13,6 +15,7 @@ const Color backgroundColor = Color(0xFFE9E9E9);
 
 // Images
 const String backgroundImage = 'assets/waves.png';
+const String gentlemanImage = 'assets/gentleman.png';
 const String findJobImage = 'assets/briefcase.png';
 const String noJobsImage = 'assets/sad.png';
 
