@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
+// Results that are shown when pressing on any of the Categories (companies)
 class CategoryResults extends StatelessWidget {
   final Map companyJobs;
 
@@ -13,6 +14,7 @@ class CategoryResults extends StatelessWidget {
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       itemCount: 1,
+      // Generates the desired company name
       itemBuilder: (context, index) => Container(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         margin: EdgeInsets.only(bottom: 24.0),
@@ -31,6 +33,7 @@ class CategoryResults extends StatelessWidget {
                 ),
               ),
             ),
+            // Generates the jobs from the desired company
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),

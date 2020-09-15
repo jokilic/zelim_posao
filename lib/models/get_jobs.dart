@@ -24,6 +24,7 @@ Map jobsUndabot;
 
 List allJobs;
 
+// Gets the data from the Web and stores it in a respective Map
 Future getJobs() async {
   jobsArsFutura = await getJobsArsFutura();
   jobsBornfight = await getJobsBornfight();
@@ -37,6 +38,7 @@ Future getJobs() async {
   jobsUhpDigital = await getJobsUhpDigital();
   jobsUndabot = await getJobsUndabot();
 
+  // Puts all created Maps in one big List
   allJobs = [
     jobsArsFutura,
     jobsBornfight,

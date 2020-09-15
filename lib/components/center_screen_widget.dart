@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// Widget that is shown instead of job results
+//   - When the app is first loaded
+//   - When there are no jobs in the search query
 class CenterScreenWidget extends StatelessWidget {
   final String text;
   final String image;

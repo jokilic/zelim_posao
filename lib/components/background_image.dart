@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
+// Enables the subtle bacground decoration
 class BackgroundImage extends StatelessWidget {
   final Widget child;
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
+// Shown when the user searches for jobs and it returns some results
 class SearchResults extends StatelessWidget {
   final List filteredJobs;
 
@@ -21,6 +22,7 @@ class SearchResults extends StatelessWidget {
   }
 }
 
+// Creates a company name and jobs that fit the search query
 class CompanyWithJobs extends StatelessWidget {
   final List filteredJobs;
   final int numberOfCompanies;
@@ -66,6 +68,7 @@ class CompanyWithJobs extends StatelessWidget {
   }
 }
 
+// Creates jobs from each respective company that fit the search query
 class CompanyJobs extends StatelessWidget {
   final List filteredJobs;
   final int numberOfCompanies;

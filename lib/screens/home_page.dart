@@ -17,6 +17,7 @@ import '../components/search_results.dart';
 int selectedCategory;
 TextEditingController textEditingController = TextEditingController();
 
+// Shows the state of the app to make it easier to show proper data on screen
 enum AppState {
   started,
   negativeSearch,
@@ -24,6 +25,7 @@ enum AppState {
   categoryScreen,
 }
 
+// Makes it easier to know when the app has finished fetching the data
 enum GettingJobs {
   no,
   yes,
@@ -42,6 +44,7 @@ class _HomePageState extends State<HomePage> {
   void didChangeDependencies() async {
     super.didChangeDependencies();
 
+    // Because 'getJobs()' is async, I had to put it in 'didChangeDependencies()' instead of 'initState()'
     await getJobs();
     setState(() {
       gettingJobs = GettingJobs.no;
@@ -67,6 +70,7 @@ class _HomePageState extends State<HomePage> {
             height: size.height,
             child: gettingJobs == GettingJobs.no
                 ? buildScreen()
+                // Show loading screen when the jobs are getting fetched
                 : Center(
                     child: SpinKitWanderingCubes(
                       color: textColor,
@@ -79,19 +83,20 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  SingleChildScrollView buildScreen() {
+  // Main screen that is shown when the app is loaded
+  Widget buildScreen() {
     return SingleChildScrollView(
       child: Column(
         children: [
           InfoButton(),
           HeroSection(),
           SearchJobs(
+            // Gets called when the user searches for a job
             onSubmitted: (jobQuery) {
               setState(() {
                 selectedCategory = null;
-
                 searchJobs(jobQuery);
-
+                // If the search finds a job, set AppState.positiveSearch
                 (allFilteredJobs.isNotEmpty)
                     ? appState = AppState.positiveSearch
                     : appState = AppState.negativeSearch;
@@ -105,6 +110,7 @@ class _HomePageState extends State<HomePage> {
             padding: EdgeInsets.symmetric(horizontal: 10.0),
             child: SizedBox(
               height: 60,
+              // Create categories with company names
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: categories.length,
@@ -113,25 +119,29 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
+          // App has just started, show starting screen
           if (appState == AppState.started)
             CenterScreenWidget(
               text: findJobString,
               image: findJobImage,
             ),
+          // Search query got no results, show 'No jobs found' screen
           if (appState == AppState.negativeSearch)
             CenterScreenWidget(
               text: noJobsString,
               image: noJobsImage,
             ),
-
+          // Search query got some results, show the jobs
           if (appState == AppState.positiveSearch)
             SearchResults(allFilteredJobs),
+          // User pressed on a category, show jobs from desired company
           if (selectedCategory != null) buildCategoryResults(),
         ],
       ),
     );
   }
 
+  // Show jobs from desired company
   Widget buildCategoryResults() {
     textEditingController.clear();
     allFilteredJobs.clear();
@@ -142,6 +152,7 @@ class _HomePageState extends State<HomePage> {
     return CategoryResults(allJobs[selectedCategory]);
   }
 
+  // Create a category with company name
   Widget buildCategory(int index) {
     return GestureDetector(
       onTap: () {

@@ -8,7 +8,6 @@ class InfoButton extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20.0),
       alignment: Alignment.centerRight,
-      // color: Colors.cyan[300],
       child: InkWell(
         onTap: () => print('Otvori InfoScreen'),
         child: Icon(

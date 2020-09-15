@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // Strings
 const String appName = 'Želim posao!';
+const String belowTitleString = 'Pronađite posao za vas';
 const String searchJobsString = 'Pretraži poslove...';
 const String findJobString = 'Pronađite posao iz snova';
 const String noJobsString = 'Nema željenih poslova';

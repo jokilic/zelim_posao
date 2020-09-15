@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 
+// A helper Class to make it easier to fetch data from the Web
 class Network {
   final String url;
 

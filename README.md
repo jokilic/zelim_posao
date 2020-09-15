@@ -23,10 +23,13 @@
 
 ## Things I still want to do 👨‍💻
 
+- [ ] Put some text in the loading screen, showing the user that the jobs are getting fetched.
 - [ ] Create screenshots of the app.
+- [ ] Create an icon & splash screen for the app.
 - [ ] Implement **InfoScreen**.
 - [ ] Make the Header fixed - It shouldn't be scrollable.
 - [ ] Make the **Categories** reflect the jobs without bundling everything in **home_page.dart**.
 - [ ] Refactor **search_results.dart** & **category_results.dart**.
 - [ ] Remove _hidden jobs_ from **UHP Digital**.
+- [x] Write comments explaining various procedures.
 - [x] Implement some graphic when the screen is empty (on start & when there are no jobs).

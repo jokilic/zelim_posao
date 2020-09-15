@@ -3,6 +3,7 @@ import 'package:html/parser.dart';
 import '../../constants.dart';
 import '../../network/network.dart';
 
+// Scrapes the 'Carrers' page of the respective company and returns a Map with company name and jobs
 Future<Map> getJobsArsFutura() async {
   var rawArsFutura = await Network(arsFuturaURL).getData();
   var parsedArsFutura = parse(rawArsFutura);

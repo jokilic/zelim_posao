@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
+// Search Bar that makes it possible to search for desired jobs
 class SearchJobs extends StatelessWidget {
   final Function onSubmitted;
   final TextEditingController textEditingController;

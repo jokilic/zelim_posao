@@ -15,7 +15,9 @@ Map filteredJobsUndabot = {};
 
 List allFilteredJobs = [];
 
+// Called when the user searches for a job
 List searchJobs(String jobQuery) {
+  // Create filtered Maps for every company
   filteredJobsArsFutura = filterJobs(
     company: arsFutura,
     jobList: jobsArsFutura,
@@ -82,7 +84,7 @@ List searchJobs(String jobQuery) {
     jobQuery: jobQuery,
   );
 
-  // Collect all of the jobs and put them in one big List
+  // Collect all of the filtered jobs and put them in one big List
   allFilteredJobs = [
     filteredJobsArsFutura,
     filteredJobsBornfight,
@@ -97,11 +99,14 @@ List searchJobs(String jobQuery) {
     filteredJobsUndabot
   ];
 
+  // Remove companies where the query doesn't match any job
   allFilteredJobs.removeWhere((element) => element['jobs'].isEmpty);
 
+// Returns a big List of Maps with companies and jobs that fit the search query
   return allFilteredJobs;
 }
 
+// Function that compares every job with the query
 Map filterJobs({
   String jobQuery,
   String company,
@@ -110,10 +115,12 @@ Map filterJobs({
   List<String> filteredList = jobList['jobs'];
   Map filteredJobs;
 
+  // Add every job that matches the query
   filteredList = filteredList
       .where((job) => job.toLowerCase().contains(jobQuery.toLowerCase()))
       .toList();
 
+  // Create a Map of filtered jobs
   filteredJobs = {
     'company': company,
     'jobs': filteredList,

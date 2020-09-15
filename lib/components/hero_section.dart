@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
+// The header of the app
 class HeroSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class HeroSection extends StatelessWidget {
           ),
         ),
         Text(
-          'Pronađite posao za vas',
+          belowTitleString,
           style: TextStyle(
             color: textColor,
             fontSize: 16.0,
