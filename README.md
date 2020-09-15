@@ -26,12 +26,12 @@ It makes it easy to search for jobs from various IT companies based in Zagreb.
 ## Things I still want to do 👨‍💻
 
 - [ ] Build a production app.
-- [ ] Create screenshots of the app.
-- [ ] Create an icon & splash screen for the app.
 - [ ] Make the Header fixed - It shouldn't be scrollable.
 - [ ] Make the **Categories** reflect the jobs without bundling everything in **home_page.dart**.
 - [ ] Refactor **search_results.dart** & **category_results.dart**.
 - [ ] Remove _hidden jobs_ from **UHP Digital**.
+- [x] Create screenshots of the app.
+- [x] Create an icon for the app.
 - [x] Fix 'starting screen' and 'no jobs screen' sometimes sticking on screen 
 - [x] Implement **InfoScreen**.
 - [x] Put some text in the loading screen, showing the user that the jobs are getting fetched.
