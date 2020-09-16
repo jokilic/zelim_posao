@@ -79,6 +79,47 @@ class HowText extends StatelessWidget {
             ),
           ],
         ),
+        SizedBox(height: 10.0),
+        Row(
+          children: [
+            SizedBox(width: 20.0),
+            Expanded(
+              child: SimpleText(
+                RichText(
+                  text: TextSpan(
+                    text: howSeventhString,
+                    style: TextStyle(
+                      color: textColor,
+                      fontSize: 20.0,
+                      height: 1.4,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: howEighthString,
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                      TextSpan(
+                        text: howNinthString,
+                        style: TextStyle(
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                      TextSpan(
+                        text: howTenthString,
+                        style: TextStyle(
+                          fontWeight: FontWeight.normal,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }

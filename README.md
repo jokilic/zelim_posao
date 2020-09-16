@@ -2,34 +2,35 @@
 
 # Želim posao! 👨‍💼
 
-👨‍💼 **Želim posao!** (_I want a job!_) is a simple app made in **Flutter**.
+👨‍💼 **Želim posao!** (_I want a job!_) is a simple app made in **Flutter**. 🐦
 
-It makes it easy to search for jobs from various IT companies based in Zagreb.
+It makes it easy to search for jobs from various IT companies based in Zagreb. 💼
 
 #### I created it for two reasons:
 
-1. I wanted to work more with **Flutter**.
-2. I'm searching for a job so I wanted to automate the process.
+1. I wanted to work more with **Flutter**. 👨‍💻
+2. I'm searching for a job so I wanted to automate the process. 🏎️
 
 #### How does it work? 👷‍♂️
 
-1.  The app scrapes the sites of the companies I sympathise and would love to work at.
-2.  It finds the job titles and stores them in a _Map_ of a particular company.
-3.  It filters those _Maps_ in order to show the information desired by the user.
+1.  The app scrapes the sites of the companies I sympathise and would love to work at. 🏢
+2.  It finds the job titles and stores them in a _Map_ of a particular company. 📦
+3.  It filters those _Maps_ in order to show the information relevant for the user. 🧹
 
-**User can search by keyword or see all jobs from desired company.**
+**User can search by keyword or see all jobs from desired company.** 🕵️‍♂️
 
 ### Želim posao! can be downloaded from [HERE](https://play.google.com/store/apps/details?id=com.josipkilic.zelim_posao). 📲
+&nbsp;
 
 ![Multi](https://raw.githubusercontent.com/jokilic/zelim_posao/master/screenshots/multi.png)
 
 ## Things I still want to do 👨‍💻
 
-- [ ] Build a production app.
 - [ ] Make the Header fixed - It shouldn't be scrollable.
 - [ ] Make the **Categories** reflect the jobs without bundling everything in **home_page.dart**.
 - [ ] Refactor **search_results.dart** & **category_results.dart**.
 - [ ] Remove _hidden jobs_ from **UHP Digital**.
+- [x] Build a production app.
 - [x] Create screenshots of the app.
 - [x] Create an icon for the app.
 - [x] Fix 'starting screen' and 'no jobs screen' sometimes sticking on screen 
