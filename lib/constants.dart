@@ -116,7 +116,7 @@ const String howNinthString = 'Mape';
 const String howTenthString =
     ' i prikazuje informacije relevantne za korisnika. 🧹';
 const String howFinalString =
-    'Korisnik može pretraživati poslove ili vidjeti sve aktivne oglase odabrane tvrtke. 🕵️‍♂️';
+    'Korisnik može pretraživati poslove ili vidjeti sve aktivne oglase odabrane tvrtke. 👨‍💼';
 
 const String ferdinandTitleString = 'Gospon Ferdinand? 🎩';
 const String ferdinandFirstString = 'Gospon Ferdinand';
@@ -124,7 +124,7 @@ const String ferdinandSecondString =
     ' je gospodin kojeg je lako uočiti u šetnji starim zagrebačkim ulicama.\nNajčešće nosi ';
 const String ferdinandThirdString = 'kuglasti šešir';
 const String ferdinandFourthString =
-    ' i uvijek je besprijekorno odjeven.\n\nOdlučio mi je pomoći u izradi ove aplikacije i na tome mu ';
+    ' i uvijek je besprijekorno odjeven. 🕴️\n\nOdlučio mi je pomoći u izradi ove aplikacije i na tome mu ';
 const String ferdinandFifthString = 'beskrajno zahvaljujem';
 const String ferdinandSixthString = '.\n\nVidite li ga kako bezbrižno šeće ';
 const String ferdinandSeventhString = 'Zagrebom';

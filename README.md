@@ -17,7 +17,7 @@ It makes it easy to search for jobs from various IT companies based in Zagreb. �
 2.  It finds the job titles and stores them in a _Map_ of a particular company. 📦
 3.  It filters those _Maps_ in order to show the information relevant for the user. 🧹
 
-**User can search by keyword or see all jobs from desired company.** 🕵️‍♂️
+**User can search by keyword or see all jobs from desired company.** 👨‍💼
 
 ### Želim posao! can be downloaded from [HERE](https://play.google.com/store/apps/details?id=com.josipkilic.zelim_posao). 📲
 &nbsp;
