@@ -9,7 +9,7 @@ import '../components/home_page/loading_screen.dart';
 import '../components/header_button.dart';
 import '../components/hero_section.dart';
 import '../components/home_page/search_jobs.dart';
-// import '../components/home_page/categories.dart';
+import '../components/home_page/categories.dart';
 import '../components/home_page/center_screen_widget.dart';
 import '../components/home_page/category_results.dart';
 import '../components/home_page/search_results.dart';
@@ -112,20 +112,12 @@ class _HomePageState extends State<HomePage> {
             },
             textEditingController: textEditingController,
           ),
-          // Categories(),
-          Container(
-            margin: EdgeInsets.only(bottom: 16.0),
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: SizedBox(
-              height: 60,
-              // Create categories with company names
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: categories.length,
-                itemBuilder: (context, index) => buildCategory(index),
-              ),
-            ),
-          ),
+          Categories(
+              itemBuilder: (context, index) => buildCategory(index, () {
+                    setState(() {
+                      selectedCategory = index;
+                    });
+                  })),
 
           // Search query got some results, show the jobs
           if (appState == AppState.positiveSearch)
@@ -160,43 +152,5 @@ class _HomePageState extends State<HomePage> {
       appState = AppState.categoryScreen;
     });
     return CategoryResults(allJobs[selectedCategory]);
-  }
-
-  // Create a category with company name
-  Widget buildCategory(int index) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          selectedCategory = index;
-        });
-      },
-      child: Container(
-        margin: EdgeInsets.only(top: 6.0),
-        padding: EdgeInsets.all(10.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              categories[index],
-              style: TextStyle(
-                color: selectedCategory == index
-                    ? textColor
-                    : textColor.withOpacity(0.5),
-                fontSize: 16.0,
-                fontWeight: selectedCategory == index
-                    ? FontWeight.bold
-                    : FontWeight.normal,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 3.0),
-              height: 2.0,
-              width: 30.0,
-              color: selectedCategory == index ? textColor : Colors.transparent,
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
