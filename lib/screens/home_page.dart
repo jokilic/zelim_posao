@@ -83,6 +83,7 @@ class _HomePageState extends State<HomePage> {
   // Main screen that is shown when the app is loaded
   Widget buildScreen() {
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Column(
         children: [
           HeaderButton(

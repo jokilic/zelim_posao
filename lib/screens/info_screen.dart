@@ -24,6 +24,7 @@ class InfoScreen extends StatelessWidget {
             width: size.width,
             height: size.height,
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 children: [
                   HeaderButton(
