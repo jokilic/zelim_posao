@@ -8,23 +8,11 @@ Future<Map> getJobsUhpDigital() async {
   var rawUhpDigital = await Network(uhpDigitalURL).getData();
   var parsedUhpDigital = parse(rawUhpDigital);
 
-  List jobSection =
-      parsedUhpDigital.getElementsByClassName('elementor-element-49859ed1');
-  List hiddenJobs =
-      jobSection[0].getElementsByClassName('elementor-hidden-desktop');
+  List parsedJobs = parsedUhpDigital
+      .getElementsByClassName('uhp-open-positions__wrapper-item-title');
 
-  hiddenJobs.forEach((element) {
-    element.remove();
-  });
-
-  List properJobsSection = jobSection[0].getElementsByTagName('section');
-  List properJobs;
   List<String> jobs = [];
-
-  properJobsSection.forEach((job) {
-    properJobs = job.getElementsByTagName('h3');
-    jobs.add(properJobs[0].text.trim());
-  });
+  parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {
     'company': uhpDigital,
