@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../models/get_jobs.dart';
 import '../models/search_jobs.dart';
+import '../models/search_popular.dart';
 import '../screens/info_screen.dart';
 import '../components/background_image.dart';
 import '../components/home_page/loading_screen.dart';
@@ -13,6 +14,7 @@ import '../components/home_page/categories.dart';
 import '../components/home_page/center_screen_widget.dart';
 import '../components/home_page/category_results.dart';
 import '../components/home_page/search_results.dart';
+import '../components/home_page/popular_search_widget.dart';
 
 int selectedCategory;
 TextEditingController textEditingController = TextEditingController();
@@ -22,6 +24,7 @@ enum AppState {
   started,
   negativeSearch,
   positiveSearch,
+  popularSearch,
   categoryScreen,
 }
 
@@ -127,20 +130,82 @@ class _HomePageState extends State<HomePage> {
           // User pressed on a category, show jobs from desired company
           if (selectedCategory != null) buildCategoryResults(),
 
-          // Search query got no results, show 'No jobs found' screen
-          if (appState == AppState.negativeSearch)
-            CenterScreenWidget(
-              text: noJobsString,
-              image: noJobsImage,
+          // Search query got no results, show 'No jobs found & Popular Jobs' screen
+          if (appState == AppState.negativeSearch ||
+              (appState == AppState.popularSearch &&
+                  allFilteredPopularJobs.isEmpty))
+            Column(
+              children: [
+                CenterScreenWidget(
+                  text: noJobsString,
+                  image: noJobsImage,
+                ),
+                SizedBox(height: 8.0),
+                Text(
+                  popularJobsCallToAction,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: tiemposFont,
+                    fontSize: 20.0,
+                  ),
+                ),
+                SizedBox(height: 24.0),
+                buildPopularJobs(),
+              ],
             ),
 
-          // App has just started, show starting screen
+          // Show 'Popular Jobs' boxes
+          if (appState == AppState.popularSearch)
+            SearchResults(allFilteredPopularJobs),
+
+          // 'Popular Jobs & Ferdinand's message' get shown when the app starts
           if (appState == AppState.started)
-            CenterScreenWidget(
-              text: findJobString,
-              image: findJobImage,
+            Column(
+              children: [
+                buildPopularJobs(),
+                SizedBox(height: 36.0),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    ferdinandMessage,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: tiemposFont,
+                      fontSize: 28.0,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 24.0),
+                Image.asset(
+                  gentlemanImage,
+                  width: 136.0,
+                ),
+              ],
             ),
         ],
+      ),
+    );
+  }
+
+  Widget buildPopularJobs() {
+    return SizedBox(
+      height: 100.0,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 10.0),
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          physics: BouncingScrollPhysics(),
+          itemCount: popularSearches.length,
+          itemBuilder: (context, index) => PopularSearchWidget(
+              image: popularSearches[index].logo,
+              onTap: () {
+                setState(() {
+                  appState = AppState.popularSearch;
+                  textEditingController.clear();
+                  searchPopularJobs(popularSearches[index].queries);
+                });
+              }),
+        ),
       ),
     );
   }
@@ -149,6 +214,7 @@ class _HomePageState extends State<HomePage> {
   Widget buildCategoryResults() {
     textEditingController.clear();
     allFilteredJobs.clear();
+    allFilteredPopularJobs.clear();
     setState(() {
       appState = AppState.categoryScreen;
     });

@@ -1,4 +1,82 @@
 import 'package:flutter/material.dart';
+import './models/popular_search.dart';
+
+// Popular Search
+final PopularSearch android = PopularSearch(
+  name: 'Android',
+  logo: androidImage,
+  queries: androidQueries,
+);
+final PopularSearch design = PopularSearch(
+  name: 'Design',
+  logo: designImage,
+  queries: designQueries,
+);
+final PopularSearch flutter = PopularSearch(
+  name: 'Flutter',
+  logo: flutterImage,
+  queries: flutterQueries,
+);
+final PopularSearch iOS = PopularSearch(
+  name: 'iOS',
+  logo: iOSImage,
+  queries: iOSQueries,
+);
+final PopularSearch javascript = PopularSearch(
+  name: 'JavaScript',
+  logo: javascriptImage,
+  queries: javascriptQueries,
+);
+final PopularSearch projectManager = PopularSearch(
+  name: 'Project Manager',
+  logo: projectManagerImage,
+  queries: projectManagerQueries,
+);
+final PopularSearch python = PopularSearch(
+  name: 'Python',
+  logo: pythonImage,
+  queries: pythonQueries,
+);
+final PopularSearch qa = PopularSearch(
+  name: 'QA',
+  logo: qaImage,
+  queries: qaQueries,
+);
+final PopularSearch react = PopularSearch(
+  name: 'React',
+  logo: reactImage,
+  queries: reactQueries,
+);
+final PopularSearch web = PopularSearch(
+  name: 'Web',
+  logo: webImage,
+  queries: webQueries,
+);
+final PopularSearch system = PopularSearch(
+  name: 'System',
+  logo: systemImage,
+  queries: systemQueries,
+);
+final PopularSearch junior = PopularSearch(
+  name: 'Junior',
+  logo: juniorImage,
+  queries: juniorQueries,
+);
+
+final List<PopularSearch> popularSearches = [
+  javascript,
+  android,
+  web,
+  iOS,
+  react,
+  flutter,
+  junior,
+  design,
+  projectManager,
+  python,
+  qa,
+  system,
+];
 
 // Strings
 const String appName = 'Želim posao!';
@@ -7,7 +85,10 @@ const String fetchingJobsString = 'Trenutak, molim...';
 const String gentlemanString = 'Gospon Ferdinand traži poslove.';
 const String searchJobsString = 'Pretraži poslove...';
 const String findJobString = 'Pronađite posao iz snova';
-const String noJobsString = 'Nema željenih poslova';
+const String noJobsString = 'Nismo našli traženi posao';
+const String popularJobsCallToAction =
+    'Možda vas zanima neka od popularnih pretraga';
+const String ferdinandMessage = 'Želim vam sreću u potrazi za željenim poslom.';
 
 // Fonts
 const String rubikFont = 'Rubik';
@@ -22,6 +103,72 @@ const String backgroundImage = 'assets/waves.png';
 const String gentlemanImage = 'assets/gentleman.png';
 const String findJobImage = 'assets/briefcase.png';
 const String noJobsImage = 'assets/sad.png';
+const String androidImage = 'assets/android.png';
+const String designImage = 'assets/design.png';
+const String flutterImage = 'assets/flutter.png';
+const String iOSImage = 'assets/ios.png';
+const String javascriptImage = 'assets/javascript.png';
+const String projectManagerImage = 'assets/projectmanager.png';
+const String pythonImage = 'assets/python.png';
+const String qaImage = 'assets/qa.png';
+const String reactImage = 'assets/react.png';
+const String webImage = 'assets/web.png';
+const String systemImage = 'assets/system.png';
+const String juniorImage = 'assets/junior.png';
+
+// Popular job queries
+const List<String> androidQueries = [
+  'android',
+  'kotlin',
+];
+const List<String> javascriptQueries = [
+  'javascript',
+  'js',
+];
+const List<String> projectManagerQueries = [
+  'project',
+  'pm',
+  'manager',
+];
+const List<String> designQueries = [
+  'design',
+  'dizajn',
+  'ui',
+  'ux',
+];
+const List<String> iOSQueries = [
+  'ios',
+  'apple',
+];
+const List<String> flutterQueries = [
+  'flutter',
+];
+const List<String> qaQueries = [
+  'qa',
+  'test',
+];
+const List<String> reactQueries = [
+  'react',
+];
+const List<String> webQueries = [
+  'web',
+  'front',
+  'react',
+  'angular',
+  'vue',
+];
+const List<String> juniorQueries = [
+  'junior',
+  'student',
+];
+const List<String> systemQueries = [
+  'sys',
+  'sistem',
+  'admin',
+];
+const List<String> pythonQueries = [
+  'python',
+];
 
 // Companies
 const String arsFutura = 'Ars Futura';

@@ -96,7 +96,7 @@ List searchJobs(String jobQuery) {
     filteredJobsMicroblink,
     filteredJobsQAgency,
     filteredJobsUhpDigital,
-    filteredJobsUndabot
+    filteredJobsUndabot,
   ];
 
   // Remove companies where the query doesn't match any job

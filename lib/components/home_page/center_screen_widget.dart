@@ -13,7 +13,6 @@ class CenterScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 36.0),
       child: Column(
         children: [
           Image.asset(
@@ -23,6 +22,7 @@ class CenterScreenWidget extends StatelessWidget {
           SizedBox(height: 20.0),
           Text(
             text,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: tiemposFont,
               fontSize: 30.0,
