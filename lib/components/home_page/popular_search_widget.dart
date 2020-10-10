@@ -4,10 +4,12 @@ import '../../constants.dart';
 
 class PopularSearchWidget extends StatelessWidget {
   final String image;
+  final String title;
   final Function onTap;
 
   PopularSearchWidget({
     this.image,
+    this.title,
     this.onTap,
   });
 
@@ -17,8 +19,7 @@ class PopularSearchWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 10.0),
-        alignment: Alignment.center,
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.0),
           border: Border.all(
@@ -26,9 +27,26 @@ class PopularSearchWidget extends StatelessWidget {
             width: 2,
           ),
         ),
-        width: 110.0,
-        height: 100.0,
-        child: Image.asset(image),
+        width: 120.0,
+        height: 110.0,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset(
+              image,
+              width: 35.0,
+              height: 35.0,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 14.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

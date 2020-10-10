@@ -38,7 +38,7 @@ final PopularSearch python = PopularSearch(
   queries: pythonQueries,
 );
 final PopularSearch qa = PopularSearch(
-  name: 'QA',
+  name: 'Testing',
   logo: qaImage,
   queries: qaQueries,
 );

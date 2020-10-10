@@ -189,7 +189,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildPopularJobs() {
     return SizedBox(
-      height: 100.0,
+      height: 110.0,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 10.0),
         child: ListView.builder(
@@ -198,6 +198,7 @@ class _HomePageState extends State<HomePage> {
           itemCount: popularSearches.length,
           itemBuilder: (context, index) => PopularSearchWidget(
               image: popularSearches[index].logo,
+              title: popularSearches[index].name,
               onTap: () {
                 setState(() {
                   appState = AppState.popularSearch;
