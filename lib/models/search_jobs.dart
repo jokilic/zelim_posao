@@ -4,6 +4,7 @@ import '../constants.dart';
 Map filteredJobsArsFutura = {};
 Map filteredJobsBornfight = {};
 Map filteredJobsCinnamon = {};
+Map filteredJobsDecode = {};
 Map filteredJobsDegordian = {};
 Map filteredJobsFive = {};
 Map filteredJobsInfinum = {};
@@ -33,6 +34,12 @@ List searchJobs(String jobQuery) {
   filteredJobsCinnamon = filterJobs(
     company: cinnamon,
     jobList: jobsCinnamon,
+    jobQuery: jobQuery,
+  );
+
+  filteredJobsDecode = filterJobs(
+    company: decode,
+    jobList: jobsDecode,
     jobQuery: jobQuery,
   );
 
@@ -89,6 +96,7 @@ List searchJobs(String jobQuery) {
     filteredJobsArsFutura,
     filteredJobsBornfight,
     filteredJobsCinnamon,
+    filteredJobsDecode,
     filteredJobsDegordian,
     filteredJobsFive,
     filteredJobsInfinum,

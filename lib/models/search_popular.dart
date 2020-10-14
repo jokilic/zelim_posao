@@ -4,6 +4,7 @@ import '../constants.dart';
 Map filteredPopularJobsArsFutura = {};
 Map filteredPopularJobsBornfight = {};
 Map filteredPopularJobsCinnamon = {};
+Map filteredPopularJobsDecode = {};
 Map filteredPopularJobsDegordian = {};
 Map filteredPopularJobsFive = {};
 Map filteredPopularJobsInfinum = {};
@@ -33,6 +34,12 @@ List searchPopularJobs(List<String> searchQueries) {
   filteredPopularJobsCinnamon = filterPopularJobs(
     company: cinnamon,
     jobList: jobsCinnamon,
+    searchQueries: searchQueries,
+  );
+
+  filteredPopularJobsDecode = filterPopularJobs(
+    company: decode,
+    jobList: jobsDecode,
     searchQueries: searchQueries,
   );
 
@@ -89,6 +96,7 @@ List searchPopularJobs(List<String> searchQueries) {
     filteredPopularJobsArsFutura,
     filteredPopularJobsBornfight,
     filteredPopularJobsCinnamon,
+    filteredPopularJobsDecode,
     filteredPopularJobsDegordian,
     filteredPopularJobsFive,
     filteredPopularJobsInfinum,

@@ -1,6 +1,7 @@
 import './companies/ars_futura.dart';
 import './companies/bornfight.dart';
 import './companies/cinnamon.dart';
+import './companies/decode.dart';
 import './companies/degordian.dart';
 import './companies/five.dart';
 import './companies/infinum.dart';
@@ -13,6 +14,7 @@ import './companies/undabot.dart';
 Map jobsArsFutura;
 Map jobsBornfight;
 Map jobsCinnamon;
+Map jobsDecode;
 Map jobsDegordian;
 Map jobsFive;
 Map jobsInfinum;
@@ -29,6 +31,7 @@ Future getJobs() async {
   jobsArsFutura = await getJobsArsFutura();
   jobsBornfight = await getJobsBornfight();
   jobsCinnamon = await getJobsCinnamon();
+  jobsDecode = await getJobsDecode();
   jobsDegordian = await getJobsDegordian();
   jobsFive = await getJobsFive();
   jobsInfinum = await getJobsInfinum();
@@ -43,6 +46,7 @@ Future getJobs() async {
     jobsArsFutura,
     jobsBornfight,
     jobsCinnamon,
+    jobsDecode,
     jobsDegordian,
     jobsFive,
     jobsInfinum,

@@ -174,6 +174,7 @@ const List<String> pythonQueries = [
 const String arsFutura = 'Ars Futura';
 const String bornfight = 'Bornfight';
 const String cinnamon = 'cinnamon.agency';
+const String decode = 'Decode';
 const String degordian = 'Degordian';
 const String five = 'Five';
 const String infinum = 'Infinum';
@@ -188,6 +189,7 @@ const List<String> categories = [
   arsFutura,
   bornfight,
   cinnamon,
+  decode,
   degordian,
   five,
   infinum,
@@ -202,6 +204,7 @@ const List<String> categories = [
 const String arsFuturaURL = 'https://arsfutura.com/careers';
 const String bornfightURL = 'https://www.bornfight.com/careers';
 const String cinnamonURL = 'https://cinnamon.agency/careers';
+const String decodeURL = 'https://decode.agency/careers';
 const String degordianURL = 'https://degordian.com/career';
 const String fiveURL = 'https://five.agency/careers';
 const String infinumURL = 'https://infinum.com/careers';
