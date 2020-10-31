@@ -1,6 +1,7 @@
 import './get_jobs.dart';
 import '../constants.dart';
 
+Map filteredPopularJobsFour0FourAgency = {};
 Map filteredPopularJobsArsFutura = {};
 Map filteredPopularJobsBornfight = {};
 Map filteredPopularJobsCinnamon = {};
@@ -11,6 +12,8 @@ Map filteredPopularJobsInfinum = {};
 Map filteredPopularJobsMartian = {};
 Map filteredPopularJobsMicroblink = {};
 Map filteredPopularJobsQAgency = {};
+Map filteredPopularJobsSpeck = {};
+Map filteredPopularJobsTrikoder = {};
 Map filteredPopularJobsUhpDigital = {};
 Map filteredPopularJobsUndabot = {};
 
@@ -19,6 +22,12 @@ List allFilteredPopularJobs = [];
 // Called when the user taps on a search box
 List searchPopularJobs(List<String> searchQueries) {
   // Create filtered Maps for every company
+  filteredPopularJobsFour0FourAgency = filterPopularJobs(
+    company: four0FourAgency,
+    jobList: jobsFour0FourAgency,
+    searchQueries: searchQueries,
+  );
+
   filteredPopularJobsArsFutura = filterPopularJobs(
     company: arsFutura,
     jobList: jobsArsFutura,
@@ -79,6 +88,18 @@ List searchPopularJobs(List<String> searchQueries) {
     searchQueries: searchQueries,
   );
 
+  filteredPopularJobsSpeck = filterPopularJobs(
+    company: speck,
+    jobList: jobsSpeck,
+    searchQueries: searchQueries,
+  );
+
+  filteredPopularJobsTrikoder = filterPopularJobs(
+    company: trikoder,
+    jobList: jobsTrikoder,
+    searchQueries: searchQueries,
+  );
+
   filteredPopularJobsUhpDigital = filterPopularJobs(
     company: uhpDigital,
     jobList: jobsUhpDigital,
@@ -93,6 +114,7 @@ List searchPopularJobs(List<String> searchQueries) {
 
   // Collect all of the filtered jobs and put them in one big List
   allFilteredPopularJobs = [
+    filteredPopularJobsFour0FourAgency,
     filteredPopularJobsArsFutura,
     filteredPopularJobsBornfight,
     filteredPopularJobsCinnamon,
@@ -103,6 +125,8 @@ List searchPopularJobs(List<String> searchQueries) {
     filteredPopularJobsMartian,
     filteredPopularJobsMicroblink,
     filteredPopularJobsQAgency,
+    filteredPopularJobsSpeck,
+    filteredPopularJobsTrikoder,
     filteredPopularJobsUhpDigital,
     filteredPopularJobsUndabot,
   ];
@@ -153,6 +177,16 @@ Map filterPopularJobs({
               job.toLowerCase().contains(searchQueries[1].toLowerCase()) ||
               job.toLowerCase().contains(searchQueries[2].toLowerCase()) ||
               job.toLowerCase().contains(searchQueries[3].toLowerCase()))
+          .toList();
+      break;
+    case 5:
+      filteredPopularList = filteredPopularList
+          .where((job) =>
+              job.toLowerCase().contains(searchQueries[0].toLowerCase()) ||
+              job.toLowerCase().contains(searchQueries[1].toLowerCase()) ||
+              job.toLowerCase().contains(searchQueries[2].toLowerCase()) ||
+              job.toLowerCase().contains(searchQueries[3].toLowerCase()) ||
+              job.toLowerCase().contains(searchQueries[4].toLowerCase()))
           .toList();
       break;
   }

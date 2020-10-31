@@ -1,3 +1,4 @@
+import './companies/four0four_agency.dart';
 import './companies/ars_futura.dart';
 import './companies/bornfight.dart';
 import './companies/cinnamon.dart';
@@ -8,9 +9,12 @@ import './companies/infinum.dart';
 import './companies/martian.dart';
 import './companies/microblink.dart';
 import './companies/q_agency.dart';
+import './companies/speck.dart';
+import './companies/trikoder.dart';
 import './companies/uhp_digital.dart';
 import './companies/undabot.dart';
 
+Map jobsFour0FourAgency;
 Map jobsArsFutura;
 Map jobsBornfight;
 Map jobsCinnamon;
@@ -21,6 +25,8 @@ Map jobsInfinum;
 Map jobsMartian;
 Map jobsMicroblink;
 Map jobsQAgency;
+Map jobsSpeck;
+Map jobsTrikoder;
 Map jobsUhpDigital;
 Map jobsUndabot;
 
@@ -28,6 +34,7 @@ List allJobs;
 
 // Gets the data from the Web and stores it in a respective Map
 Future getJobs() async {
+  jobsFour0FourAgency = await getJobsFour0FourAgency();
   jobsArsFutura = await getJobsArsFutura();
   jobsBornfight = await getJobsBornfight();
   jobsCinnamon = await getJobsCinnamon();
@@ -38,11 +45,14 @@ Future getJobs() async {
   jobsMartian = await getJobsMartian();
   jobsMicroblink = await getJobsMicroblink();
   jobsQAgency = await getJobsQAgency();
+  jobsSpeck = await getJobsSpeck();
+  jobsTrikoder = await getJobsTrikoder();
   jobsUhpDigital = await getJobsUhpDigital();
   jobsUndabot = await getJobsUndabot();
 
   // Puts all created Maps in one big List
   allJobs = [
+    jobsFour0FourAgency,
     jobsArsFutura,
     jobsBornfight,
     jobsCinnamon,
@@ -53,6 +63,8 @@ Future getJobs() async {
     jobsMartian,
     jobsMicroblink,
     jobsQAgency,
+    jobsSpeck,
+    jobsTrikoder,
     jobsUhpDigital,
     jobsUndabot,
   ];

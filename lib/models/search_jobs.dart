@@ -1,6 +1,7 @@
 import './get_jobs.dart';
 import '../constants.dart';
 
+Map filteredJobsFour0FourAgency = {};
 Map filteredJobsArsFutura = {};
 Map filteredJobsBornfight = {};
 Map filteredJobsCinnamon = {};
@@ -11,6 +12,8 @@ Map filteredJobsInfinum = {};
 Map filteredJobsMartian = {};
 Map filteredJobsMicroblink = {};
 Map filteredJobsQAgency = {};
+Map filteredJobsSpeck = {};
+Map filteredJobsTrikoder = {};
 Map filteredJobsUhpDigital = {};
 Map filteredJobsUndabot = {};
 
@@ -19,6 +22,12 @@ List allFilteredJobs = [];
 // Called when the user searches for a job
 List searchJobs(String jobQuery) {
   // Create filtered Maps for every company
+  filteredJobsFour0FourAgency = filterJobs(
+    company: four0FourAgency,
+    jobList: jobsFour0FourAgency,
+    jobQuery: jobQuery,
+  );
+
   filteredJobsArsFutura = filterJobs(
     company: arsFutura,
     jobList: jobsArsFutura,
@@ -79,6 +88,18 @@ List searchJobs(String jobQuery) {
     jobQuery: jobQuery,
   );
 
+  filteredJobsSpeck = filterJobs(
+    company: speck,
+    jobList: jobsSpeck,
+    jobQuery: jobQuery,
+  );
+
+  filteredJobsTrikoder = filterJobs(
+    company: trikoder,
+    jobList: jobsTrikoder,
+    jobQuery: jobQuery,
+  );
+
   filteredJobsUhpDigital = filterJobs(
     company: uhpDigital,
     jobList: jobsUhpDigital,
@@ -93,6 +114,7 @@ List searchJobs(String jobQuery) {
 
   // Collect all of the filtered jobs and put them in one big List
   allFilteredJobs = [
+    filteredJobsFour0FourAgency,
     filteredJobsArsFutura,
     filteredJobsBornfight,
     filteredJobsCinnamon,
@@ -103,6 +125,8 @@ List searchJobs(String jobQuery) {
     filteredJobsMartian,
     filteredJobsMicroblink,
     filteredJobsQAgency,
+    filteredJobsSpeck,
+    filteredJobsTrikoder,
     filteredJobsUhpDigital,
     filteredJobsUndabot,
   ];

@@ -95,7 +95,7 @@ const String rubikFont = 'Rubik';
 const String tiemposFont = 'Tiempos';
 
 // Colors
-const Color textColor = Color(0xFF242424);
+const Color textColor = Color(0xFF1A1721);
 const Color backgroundColor = Color(0xFFE9E9E9);
 
 // Images
@@ -171,6 +171,7 @@ const List<String> pythonQueries = [
 ];
 
 // Companies
+const String four0FourAgency = '404 agency';
 const String arsFutura = 'Ars Futura';
 const String bornfight = 'Bornfight';
 const String cinnamon = 'cinnamon.agency';
@@ -181,11 +182,14 @@ const String infinum = 'Infinum';
 const String martian = 'Martian & Machine';
 const String microblink = 'Microblink';
 const String qAgency = 'Q agency';
+const String speck = 'Speck';
+const String trikoder = 'Trikoder';
 const String uhpDigital = 'UHP Digital';
 const String undabot = 'Undabot';
 
 // Categories
 const List<String> categories = [
+  four0FourAgency,
   arsFutura,
   bornfight,
   cinnamon,
@@ -196,11 +200,14 @@ const List<String> categories = [
   martian,
   microblink,
   qAgency,
+  speck,
+  trikoder,
   uhpDigital,
   undabot,
 ];
 
 // Job URLs
+const String four0FourAgencyURL = 'https://www.404.agency/en/careers';
 const String arsFuturaURL = 'https://arsfutura.com/careers';
 const String bornfightURL = 'https://www.bornfight.com/careers';
 const String cinnamonURL = 'https://cinnamon.agency/careers';
@@ -211,6 +218,9 @@ const String infinumURL = 'https://infinum.com/careers';
 const String martianURL = 'https://martian.ventures/careers';
 const String microblinkURL = 'https://microblink.com/careers';
 const String qAgencyURL = 'https://q.agency/careers';
+const String speckURL =
+    'https://develop.speck.agency:3001/wp-json/wp/v2/posts?categories=15';
+const String trikoderURL = 'https://www.trikoder.net';
 const String uhpDigitalURL = 'https://uhp.digital/en/career';
 const String undabotURL = 'https://careers.smartrecruiters.com/Undabot';
 
