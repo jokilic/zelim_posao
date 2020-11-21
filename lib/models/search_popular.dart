@@ -24,91 +24,91 @@ List searchPopularJobs(List<String> searchQueries) {
   // Create filtered Maps for every company
   filteredPopularJobsFour0FourAgency = filterPopularJobs(
     company: four0FourAgency,
-    jobList: jobsFour0FourAgency,
+    jobList: jobsFour0FourAgency!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsArsFutura = filterPopularJobs(
     company: arsFutura,
-    jobList: jobsArsFutura,
+    jobList: jobsArsFutura!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsBornfight = filterPopularJobs(
     company: bornfight,
-    jobList: jobsBornfight,
+    jobList: jobsBornfight!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsCinnamon = filterPopularJobs(
     company: cinnamon,
-    jobList: jobsCinnamon,
+    jobList: jobsCinnamon!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsDecode = filterPopularJobs(
     company: decode,
-    jobList: jobsDecode,
+    jobList: jobsDecode!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsDegordian = filterPopularJobs(
     company: degordian,
-    jobList: jobsDegordian,
+    jobList: jobsDegordian!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsFive = filterPopularJobs(
     company: five,
-    jobList: jobsFive,
+    jobList: jobsFive!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsInfinum = filterPopularJobs(
     company: infinum,
-    jobList: jobsInfinum,
+    jobList: jobsInfinum!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsMartian = filterPopularJobs(
     company: martian,
-    jobList: jobsMartian,
+    jobList: jobsMartian!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsMicroblink = filterPopularJobs(
     company: microblink,
-    jobList: jobsMicroblink,
+    jobList: jobsMicroblink!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsQAgency = filterPopularJobs(
     company: qAgency,
-    jobList: jobsQAgency,
+    jobList: jobsQAgency!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsSpeck = filterPopularJobs(
     company: speck,
-    jobList: jobsSpeck,
+    jobList: jobsSpeck!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsTrikoder = filterPopularJobs(
     company: trikoder,
-    jobList: jobsTrikoder,
+    jobList: jobsTrikoder!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsUhpDigital = filterPopularJobs(
     company: uhpDigital,
-    jobList: jobsUhpDigital,
+    jobList: jobsUhpDigital!,
     searchQueries: searchQueries,
   );
 
   filteredPopularJobsUndabot = filterPopularJobs(
     company: undabot,
-    jobList: jobsUndabot,
+    jobList: jobsUndabot!,
     searchQueries: searchQueries,
   );
 
@@ -140,30 +140,30 @@ List searchPopularJobs(List<String> searchQueries) {
 
 // Function that filters jobs with the popular queries
 Map filterPopularJobs({
-  List<String> searchQueries,
-  String company,
-  Map jobList,
+  required List<String> searchQueries,
+  String? company,
+  required Map jobList,
 }) {
-  List<String> filteredPopularList = jobList['jobs'];
+  List<String>? filteredPopularList = jobList['jobs'];
   Map filteredPopularJobs;
 
   // This is so ugly and needs to be refactored :(
   switch (searchQueries.length) {
     case 1:
-      filteredPopularList = filteredPopularList
+      filteredPopularList = filteredPopularList!
           .where((job) =>
               job.toLowerCase().contains(searchQueries[0].toLowerCase()))
           .toList();
       break;
     case 2:
-      filteredPopularList = filteredPopularList
+      filteredPopularList = filteredPopularList!
           .where((job) =>
               job.toLowerCase().contains(searchQueries[0].toLowerCase()) ||
               job.toLowerCase().contains(searchQueries[1].toLowerCase()))
           .toList();
       break;
     case 3:
-      filteredPopularList = filteredPopularList
+      filteredPopularList = filteredPopularList!
           .where((job) =>
               job.toLowerCase().contains(searchQueries[0].toLowerCase()) ||
               job.toLowerCase().contains(searchQueries[1].toLowerCase()) ||
@@ -171,7 +171,7 @@ Map filterPopularJobs({
           .toList();
       break;
     case 4:
-      filteredPopularList = filteredPopularList
+      filteredPopularList = filteredPopularList!
           .where((job) =>
               job.toLowerCase().contains(searchQueries[0].toLowerCase()) ||
               job.toLowerCase().contains(searchQueries[1].toLowerCase()) ||
@@ -180,7 +180,7 @@ Map filterPopularJobs({
           .toList();
       break;
     case 5:
-      filteredPopularList = filteredPopularList
+      filteredPopularList = filteredPopularList!
           .where((job) =>
               job.toLowerCase().contains(searchQueries[0].toLowerCase()) ||
               job.toLowerCase().contains(searchQueries[1].toLowerCase()) ||

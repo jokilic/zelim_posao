@@ -11,7 +11,7 @@ Future<Map> getJobsMartian() async {
   List parsedJobs =
       parsedMartian.getElementsByClassName('Positions-module--jobTitle--21nad');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

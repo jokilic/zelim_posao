@@ -16,7 +16,7 @@ import '../components/home_page/category_results.dart';
 import '../components/home_page/search_results.dart';
 import '../components/home_page/popular_search_widget.dart';
 
-int selectedCategory;
+int? selectedCategory;
 TextEditingController textEditingController = TextEditingController();
 
 // Shows the state of the app to make it easier to show proper data on screen
@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   appState = AppState.popularSearch;
                   textEditingController.clear();
-                  searchPopularJobs(popularSearches[index].queries);
+                  searchPopularJobs(popularSearches[index].queries!);
                 });
               }),
         ),
@@ -219,6 +219,6 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       appState = AppState.categoryScreen;
     });
-    return CategoryResults(allJobs[selectedCategory]);
+    return CategoryResults(allJobs[selectedCategory!]);
   }
 }

@@ -11,7 +11,7 @@ Future<Map> getJobsInfinum() async {
   List parsedJobs =
       parsedInfinum.getElementsByClassName('job-list-item__title');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

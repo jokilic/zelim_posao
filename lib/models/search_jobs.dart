@@ -24,91 +24,91 @@ List searchJobs(String jobQuery) {
   // Create filtered Maps for every company
   filteredJobsFour0FourAgency = filterJobs(
     company: four0FourAgency,
-    jobList: jobsFour0FourAgency,
+    jobList: jobsFour0FourAgency!,
     jobQuery: jobQuery,
   );
 
   filteredJobsArsFutura = filterJobs(
     company: arsFutura,
-    jobList: jobsArsFutura,
+    jobList: jobsArsFutura!,
     jobQuery: jobQuery,
   );
 
   filteredJobsBornfight = filterJobs(
     company: bornfight,
-    jobList: jobsBornfight,
+    jobList: jobsBornfight!,
     jobQuery: jobQuery,
   );
 
   filteredJobsCinnamon = filterJobs(
     company: cinnamon,
-    jobList: jobsCinnamon,
+    jobList: jobsCinnamon!,
     jobQuery: jobQuery,
   );
 
   filteredJobsDecode = filterJobs(
     company: decode,
-    jobList: jobsDecode,
+    jobList: jobsDecode!,
     jobQuery: jobQuery,
   );
 
   filteredJobsDegordian = filterJobs(
     company: degordian,
-    jobList: jobsDegordian,
+    jobList: jobsDegordian!,
     jobQuery: jobQuery,
   );
 
   filteredJobsFive = filterJobs(
     company: five,
-    jobList: jobsFive,
+    jobList: jobsFive!,
     jobQuery: jobQuery,
   );
 
   filteredJobsInfinum = filterJobs(
     company: infinum,
-    jobList: jobsInfinum,
+    jobList: jobsInfinum!,
     jobQuery: jobQuery,
   );
 
   filteredJobsMartian = filterJobs(
     company: martian,
-    jobList: jobsMartian,
+    jobList: jobsMartian!,
     jobQuery: jobQuery,
   );
 
   filteredJobsMicroblink = filterJobs(
     company: microblink,
-    jobList: jobsMicroblink,
+    jobList: jobsMicroblink!,
     jobQuery: jobQuery,
   );
 
   filteredJobsQAgency = filterJobs(
     company: qAgency,
-    jobList: jobsQAgency,
+    jobList: jobsQAgency!,
     jobQuery: jobQuery,
   );
 
   filteredJobsSpeck = filterJobs(
     company: speck,
-    jobList: jobsSpeck,
+    jobList: jobsSpeck!,
     jobQuery: jobQuery,
   );
 
   filteredJobsTrikoder = filterJobs(
     company: trikoder,
-    jobList: jobsTrikoder,
+    jobList: jobsTrikoder!,
     jobQuery: jobQuery,
   );
 
   filteredJobsUhpDigital = filterJobs(
     company: uhpDigital,
-    jobList: jobsUhpDigital,
+    jobList: jobsUhpDigital!,
     jobQuery: jobQuery,
   );
 
   filteredJobsUndabot = filterJobs(
     company: undabot,
-    jobList: jobsUndabot,
+    jobList: jobsUndabot!,
     jobQuery: jobQuery,
   );
 
@@ -140,16 +140,16 @@ List searchJobs(String jobQuery) {
 
 // Function that compares every job with the query
 Map filterJobs({
-  String jobQuery,
-  String company,
-  Map jobList,
+  String? jobQuery,
+  String? company,
+  required Map jobList,
 }) {
   List<String> filteredList = jobList['jobs'];
   Map filteredJobs;
 
   // Add every job that matches the query
   filteredList = filteredList
-      .where((job) => job.toLowerCase().contains(jobQuery.toLowerCase()))
+      .where((job) => job.toLowerCase().contains(jobQuery!.toLowerCase()))
       .toList();
 
   // Create a Map of filtered jobs

@@ -12,7 +12,7 @@ Future<Map> getJobsBornfight() async {
 
   List parsedJobs = parsedBornfightPositions[0].getElementsByClassName('u-a4');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

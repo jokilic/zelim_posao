@@ -10,7 +10,7 @@ Future<Map> getJobsFour0FourAgency() async {
 
   List parsedJobs = parsedFour0FourAgency.getElementsByClassName('gray-line');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

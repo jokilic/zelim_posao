@@ -12,7 +12,7 @@ Future<Map> getJobsArsFutura() async {
 
   List parsedJobs = parsedJobsContainer[0].getElementsByTagName('h3');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

@@ -10,7 +10,7 @@ Future<Map> getJobsTrikoder() async {
 
   List parsedJobs = parsedTrikoder.getElementsByClassName('job-list-link');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

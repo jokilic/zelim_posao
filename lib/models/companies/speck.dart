@@ -8,7 +8,7 @@ Future<Map> getJobsSpeck() async {
   var rawSpeck = await Network(speckURL).getData();
   var decodedSpeck = jsonDecode(rawSpeck);
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   decodedSpeck.forEach((job) => jobs.add(job['title']['rendered'].trim()));
 
   Map finalJobs = {

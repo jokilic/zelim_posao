@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import '../../constants.dart';
 
 class PopularSearchWidget extends StatelessWidget {
-  final String image;
-  final String title;
-  final Function onTap;
+  final String? image;
+  final String? title;
+  final Function? onTap;
 
   PopularSearchWidget({
     this.image,
@@ -16,7 +16,7 @@ class PopularSearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: onTap as void Function()?,
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 10.0),
         padding: EdgeInsets.all(10.0),
@@ -34,12 +34,12 @@ class PopularSearchWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(
-              image,
+              image!,
               width: 35.0,
               height: 35.0,
             ),
             Text(
-              title,
+              title!,
               style: TextStyle(
                 fontSize: 14.0,
                 fontWeight: FontWeight.bold,

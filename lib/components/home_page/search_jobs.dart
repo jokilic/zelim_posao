@@ -4,8 +4,8 @@ import '../../constants.dart';
 
 // Search Bar that makes it possible to search for desired jobs
 class SearchJobs extends StatelessWidget {
-  final Function onSubmitted;
-  final TextEditingController textEditingController;
+  final Function? onSubmitted;
+  final TextEditingController? textEditingController;
 
   SearchJobs({this.onSubmitted, this.textEditingController});
 
@@ -24,7 +24,7 @@ class SearchJobs extends StatelessWidget {
         ),
       ),
       child: TextField(
-        onSubmitted: onSubmitted,
+        onSubmitted: onSubmitted as void Function(String)?,
         controller: textEditingController,
         style: searchStyle(),
         decoration: inputDecoration(),

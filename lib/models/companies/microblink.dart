@@ -10,12 +10,12 @@ Future<Map> getJobsMicroblink() async {
 
   List parsedJobsContainer = parsedMicroblink.getElementsByClassName('mb-job');
 
-  List parsedJobs;
+  List? parsedJobs;
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobsContainer.forEach((job) {
     parsedJobs = job.getElementsByClassName('title');
-    jobs.add(parsedJobs[0].text.trim());
+    jobs.add(parsedJobs![0].text.trim());
   });
 
   Map finalJobs = {

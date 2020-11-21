@@ -14,23 +14,23 @@ import './companies/trikoder.dart';
 import './companies/uhp_digital.dart';
 import './companies/undabot.dart';
 
-Map jobsFour0FourAgency;
-Map jobsArsFutura;
-Map jobsBornfight;
-Map jobsCinnamon;
-Map jobsDecode;
-Map jobsDegordian;
-Map jobsFive;
-Map jobsInfinum;
-Map jobsMartian;
-Map jobsMicroblink;
-Map jobsQAgency;
-Map jobsSpeck;
-Map jobsTrikoder;
-Map jobsUhpDigital;
-Map jobsUndabot;
+Map? jobsFour0FourAgency;
+Map? jobsArsFutura;
+Map? jobsBornfight;
+Map? jobsCinnamon;
+Map? jobsDecode;
+Map? jobsDegordian;
+Map? jobsFive;
+Map? jobsInfinum;
+Map? jobsMartian;
+Map? jobsMicroblink;
+Map? jobsQAgency;
+Map? jobsSpeck;
+Map? jobsTrikoder;
+Map? jobsUhpDigital;
+Map? jobsUndabot;
 
-List allJobs;
+late List allJobs;
 
 // Gets the data from the Web and stores it in a respective Map
 Future getJobs() async {

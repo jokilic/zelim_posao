@@ -10,7 +10,7 @@ Future<Map> getJobsDegordian() async {
 
   List parsedJobs = parsedDegordian.getElementsByTagName('h4');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

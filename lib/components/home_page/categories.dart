@@ -5,7 +5,7 @@ import '../../screens/home_page.dart';
 
 // Categories with various companies that are shown below the Search Bar
 class Categories extends StatelessWidget {
-  final Function itemBuilder;
+  final Function? itemBuilder;
 
   Categories({this.itemBuilder});
 
@@ -20,7 +20,7 @@ class Categories extends StatelessWidget {
           physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
-          itemBuilder: itemBuilder,
+          itemBuilder: itemBuilder as Widget Function(BuildContext, int),
         ),
       ),
     );
@@ -29,7 +29,7 @@ class Categories extends StatelessWidget {
 
 Widget buildCategory(int index, Function onTap) {
   return GestureDetector(
-    onTap: onTap,
+    onTap: onTap as void Function()?,
     child: Container(
       margin: EdgeInsets.only(top: 6.0),
       padding: EdgeInsets.all(10.0),

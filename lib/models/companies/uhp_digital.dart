@@ -11,7 +11,7 @@ Future<Map> getJobsUhpDigital() async {
   List parsedJobs = parsedUhpDigital
       .getElementsByClassName('uhp-open-positions__wrapper-item-title');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

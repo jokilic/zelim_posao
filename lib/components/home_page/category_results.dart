@@ -4,7 +4,7 @@ import '../../constants.dart';
 
 // Results that are shown when pressing on any of the Categories (companies)
 class CategoryResults extends StatelessWidget {
-  final Map companyJobs;
+  final Map? companyJobs;
 
   CategoryResults(this.companyJobs);
 
@@ -24,7 +24,7 @@ class CategoryResults extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 10.0),
               child: Text(
-                companyJobs['company'],
+                companyJobs!['company'],
                 style: TextStyle(
                   color: textColor,
                   fontSize: 28.0,
@@ -37,7 +37,7 @@ class CategoryResults extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: companyJobs['jobs'].length,
+              itemCount: companyJobs!['jobs'].length,
               itemBuilder: (context, numberOfJobs) => Container(
                 margin: EdgeInsets.all(6.0),
                 child: Row(
@@ -50,7 +50,7 @@ class CategoryResults extends StatelessWidget {
                     SizedBox(width: 10.0),
                     Expanded(
                       child: Text(
-                        companyJobs['jobs'][numberOfJobs],
+                        companyJobs!['jobs'][numberOfJobs],
                         style: TextStyle(
                           color: textColor,
                           fontFamily: rubikFont,

@@ -11,7 +11,7 @@ Future<Map> getJobsUndabot() async {
   List parsedJobs = parsedUndabot
       .getElementsByClassName('details-title job-title link--block-target');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

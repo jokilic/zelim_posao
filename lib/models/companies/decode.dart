@@ -10,7 +10,7 @@ Future<Map> getJobsDecode() async {
 
   List parsedJobs = parsedDecode.getElementsByClassName('job__title');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {

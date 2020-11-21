@@ -5,8 +5,8 @@ import 'package:zelim_posao/constants.dart';
 //   - When the app is first loaded
 //   - When there are no jobs in the search query
 class CenterScreenWidget extends StatelessWidget {
-  final String text;
-  final String image;
+  final String? text;
+  final String? image;
 
   CenterScreenWidget({this.text, this.image});
 
@@ -16,12 +16,12 @@ class CenterScreenWidget extends StatelessWidget {
       child: Column(
         children: [
           Image.asset(
-            image,
+            image!,
             width: 136.0,
           ),
           SizedBox(height: 20.0),
           Text(
-            text,
+            text!,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: tiemposFont,

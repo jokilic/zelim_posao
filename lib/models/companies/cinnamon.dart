@@ -10,7 +10,7 @@ Future<Map> getJobsCinnamon() async {
 
   List parsedJobs = parsedCinnamon.getElementsByClassName('career-position');
 
-  List<String> jobs = [];
+  List<String?> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {
