@@ -18,7 +18,7 @@ class ZelimPosao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      // debugShowCheckedModeBanner: false,
       initialRoute: HomePage.routeName,
       routes: {
         InfoScreen.routeName: (context) => InfoScreen(),
