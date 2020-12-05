@@ -180,6 +180,7 @@ class _HomePageState extends State<HomePage> {
                   gentlemanImage,
                   width: 136.0,
                 ),
+                SizedBox(height: 36.0),
               ],
             ),
         ],
