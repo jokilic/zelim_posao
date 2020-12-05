@@ -12,7 +12,7 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16.0),
+      margin: EdgeInsets.only(bottom: 8.0),
       padding: EdgeInsets.symmetric(horizontal: 10.0),
       child: SizedBox(
         height: 60,

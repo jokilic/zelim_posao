@@ -85,106 +85,113 @@ class _HomePageState extends State<HomePage> {
 
   // Main screen that is shown when the app is loaded
   Widget buildScreen() {
-    return SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
-      child: Column(
-        children: [
-          HeaderButton(
-            alignment: Alignment.centerRight,
-            icon: Icon(
-              Icons.info_outline,
-              color: textColor,
-              size: 32.0,
-            ),
-            onTap: () => Navigator.pushNamed(
-              context,
-              InfoScreen.routeName,
-            ),
+    return Column(
+      children: [
+        HeaderButton(
+          alignment: Alignment.centerRight,
+          icon: Icon(
+            Icons.info_outline,
+            color: textColor,
+            size: 32.0,
           ),
-          HeroSection(),
-          SearchJobs(
-            // Gets called when the user searches for a job
-            onSubmitted: (jobQuery) {
+          onTap: () => Navigator.pushNamed(
+            context,
+            InfoScreen.routeName,
+          ),
+        ),
+        HeroSection(),
+        SearchJobs(
+          // Gets called when the user searches for a job
+          onSubmitted: (jobQuery) {
+            setState(() {
+              selectedCategory = null;
+              searchJobs(jobQuery);
+              // If the search finds a job, set AppState.positiveSearch
+              (allFilteredJobs.isNotEmpty)
+                  ? appState = AppState.positiveSearch
+                  : appState = AppState.negativeSearch;
+            });
+          },
+          textEditingController: textEditingController,
+        ),
+        Categories(
+          itemBuilder: (context, index) => buildCategory(
+            index,
+            () {
               setState(() {
-                selectedCategory = null;
-                searchJobs(jobQuery);
-                // If the search finds a job, set AppState.positiveSearch
-                (allFilteredJobs.isNotEmpty)
-                    ? appState = AppState.positiveSearch
-                    : appState = AppState.negativeSearch;
+                selectedCategory = index;
               });
             },
-            textEditingController: textEditingController,
           ),
-          Categories(
-              itemBuilder: (context, index) => buildCategory(index, () {
-                    setState(() {
-                      selectedCategory = index;
-                    });
-                  })),
+        ),
+        Expanded(
+          child: ListView(
+            children: [
+              // Search query got some results, show the jobs
+              if (appState == AppState.positiveSearch)
+                SearchResults(allFilteredJobs),
 
-          // Search query got some results, show the jobs
-          if (appState == AppState.positiveSearch)
-            SearchResults(allFilteredJobs),
+              // User pressed on a category, show jobs from desired company
+              if (selectedCategory != null) buildCategoryResults(),
 
-          // User pressed on a category, show jobs from desired company
-          if (selectedCategory != null) buildCategoryResults(),
-
-          // Search query got no results, show 'No jobs found & Popular Jobs' screen
-          if (appState == AppState.negativeSearch ||
-              (appState == AppState.popularSearch &&
-                  allFilteredPopularJobs.isEmpty))
-            Column(
-              children: [
-                CenterScreenWidget(
-                  text: noJobsString,
-                  image: noJobsImage,
-                ),
-                SizedBox(height: 8.0),
-                Text(
-                  popularJobsCallToAction,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: tiemposFont,
-                    fontSize: 20.0,
-                  ),
-                ),
-                SizedBox(height: 24.0),
-                buildPopularJobs(),
-              ],
-            ),
-
-          // Show 'Popular Jobs' boxes
-          if (appState == AppState.popularSearch)
-            SearchResults(allFilteredPopularJobs),
-
-          // 'Popular Jobs & Ferdinand's message' get shown when the app starts
-          if (appState == AppState.started)
-            Column(
-              children: [
-                buildPopularJobs(),
-                SizedBox(height: 36.0),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text(
-                    ferdinandMessage,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: tiemposFont,
-                      fontSize: 28.0,
+              // Search query got no results, show 'No jobs found & Popular Jobs' screen
+              if (appState == AppState.negativeSearch ||
+                  (appState == AppState.popularSearch &&
+                      allFilteredPopularJobs.isEmpty))
+                Column(
+                  children: [
+                    CenterScreenWidget(
+                      text: noJobsString,
+                      image: noJobsImage,
                     ),
-                  ),
+                    SizedBox(height: 8.0),
+                    Text(
+                      popularJobsCallToAction,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: tiemposFont,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                    SizedBox(height: 24.0),
+                    buildPopularJobs(),
+                    SizedBox(height: 36.0),
+                  ],
                 ),
-                SizedBox(height: 24.0),
-                Image.asset(
-                  gentlemanImage,
-                  width: 136.0,
+
+              // Show 'Popular Jobs' boxes
+              if (appState == AppState.popularSearch)
+                SearchResults(allFilteredPopularJobs),
+
+              // 'Popular Jobs & Ferdinand's message' get shown when the app starts
+              if (appState == AppState.started)
+                Column(
+                  children: [
+                    buildPopularJobs(),
+                    SizedBox(height: 36.0),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Text(
+                        ferdinandMessage,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: tiemposFont,
+                          fontSize: 28.0,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 24.0),
+                    Image.asset(
+                      gentlemanImage,
+                      width: 136.0,
+                    ),
+                    SizedBox(height: 36.0),
+                  ],
                 ),
-                SizedBox(height: 36.0),
-              ],
-            ),
-        ],
-      ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
