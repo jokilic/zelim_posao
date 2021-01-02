@@ -6,6 +6,15 @@ import '../../network/network.dart';
 // Scrapes the 'Carrers' page of the respective company and returns a Map with company name and jobs
 Future<Map> getJobsQAgency() async {
   var rawQAgency = await Network(qAgencyURL).getData();
+
+  // If there are problems with the company website, return this
+  if (rawQAgency == 'Problems fetching jobs') {
+    return {
+      'company': qAgency,
+      'jobs': ['Problems fetching jobs from $qAgency'],
+    };
+  }
+
   var parsedQAgency = parse(rawQAgency);
 
   List parsedJobs =

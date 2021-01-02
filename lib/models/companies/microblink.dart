@@ -6,6 +6,15 @@ import '../../network/network.dart';
 // Scrapes the 'Carrers' page of the respective company and returns a Map with company name and jobs
 Future<Map> getJobsMicroblink() async {
   var rawMicroblink = await Network(microblinkURL).getData();
+
+  // If there are problems with the company website, return this
+  if (rawMicroblink == 'Problems fetching jobs') {
+    return {
+      'company': microblink,
+      'jobs': ['Problems fetching jobs from $microblink'],
+    };
+  }
+
   var parsedMicroblink = parse(rawMicroblink);
 
   List parsedJobsContainer = parsedMicroblink.getElementsByClassName('mb-job');
