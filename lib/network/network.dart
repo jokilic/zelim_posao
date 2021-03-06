@@ -12,6 +12,6 @@ class Network {
     if (response.statusCode == 200)
       return response.body;
     else
-      throw Exception('Network Error - ${response.statusCode}');
+      return 'Problems fetching jobs';
   }
 }
