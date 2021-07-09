@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:html/parser.dart';
 
 import '../../constants.dart';
