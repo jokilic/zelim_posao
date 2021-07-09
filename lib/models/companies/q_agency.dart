@@ -17,8 +17,7 @@ Future<Map> getJobsQAgency() async {
 
   var parsedQAgency = parse(rawQAgency);
 
-  List parsedJobs =
-      parsedQAgency.getElementsByClassName('c-openPosition__info_position');
+  List parsedJobs = parsedQAgency.getElementsByClassName('c-openPosition__info_position');
 
   List<String> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));

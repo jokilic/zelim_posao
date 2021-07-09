@@ -17,7 +17,8 @@ Future<Map> getJobsCinnamon() async {
 
   var parsedCinnamon = parse(rawCinnamon);
 
-  List parsedJobs = parsedCinnamon.getElementsByClassName('career-position');
+  var jobsSection = parsedCinnamon.getElementById('jobs');
+  List parsedJobs = jobsSection.getElementsByTagName('h5');
 
   List<String> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:html/parser.dart';
 
 import '../../constants.dart';
@@ -17,8 +19,8 @@ Future<Map> getJobsMartian() async {
 
   var parsedMartian = parse(rawMartian);
 
-  List parsedJobs =
-      parsedMartian.getElementsByClassName('Positions-module--jobTitle--21nad');
+  var jobsSection = parsedMartian.getElementsByClassName('Section-module--wrapper--2M1n4')[3];
+  List parsedJobs = jobsSection.getElementsByTagName('h2');
 
   List<String> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));
