@@ -3,7 +3,7 @@ description: Simple Flutter app that automates job searching.
 
 publish_to: 'none'
 
-version: 1.0.8+9
+version: 1.0.9+10
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
