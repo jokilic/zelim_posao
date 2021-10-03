@@ -86,8 +86,7 @@ const String gentlemanString = 'Gospon Ferdinand traži poslove.';
 const String searchJobsString = 'Pretraži poslove...';
 const String findJobString = 'Pronađite posao iz snova';
 const String noJobsString = 'Nismo našli traženi posao';
-const String popularJobsCallToAction =
-    'Možda vas zanima neka od popularnih pretraga';
+const String popularJobsCallToAction = 'Možda vas zanima neka od popularnih pretraga';
 const String ferdinandMessage = 'Želim vam sreću u potrazi za željenim poslom.';
 
 // Fonts
@@ -211,15 +210,14 @@ const String four0FourAgencyURL = 'https://www.404.agency/en/careers';
 const String arsFuturaURL = 'https://arsfutura.com/careers';
 const String bornfightURL = 'https://www.bornfight.com/careers';
 const String cinnamonURL = 'https://cinnamon.agency/careers';
-const String decodeURL = 'https://decode.agency/careers';
+const String decodeURL = 'https://decode.bamboohr.com/jobs/embed2.php?departmentId=0';
 const String degordianURL = 'https://degordian.com/career';
 const String fiveURL = 'https://five.agency/careers';
 const String infinumURL = 'https://infinum.com/careers';
 const String martianURL = 'https://martian.ventures/careers';
-const String microblinkURL = 'https://microblink.com/careers';
+const String microblinkURL = 'https://microblink.com/careers/open-positions';
 const String qAgencyURL = 'https://q.agency/careers';
-const String speckURL =
-    'https://develop.speck.agency:3001/wp-json/wp/v2/posts?categories=15';
+const String speckURL = 'https://www.speck.agency/careers';
 const String trikoderURL = 'https://www.trikoder.net';
 const String uhpDigitalURL = 'https://uhp.digital/en/career';
 const String undabotURL = 'https://careers.smartrecruiters.com/Undabot';
@@ -244,8 +242,7 @@ InputDecoration inputDecoration() {
 
 // Info Screen
 const String whatIsThisTitleString = 'Što je ovo? 🤔';
-const String whatIsThisFirstString =
-    ' je jednostavna aplikacija napravljena u ';
+const String whatIsThisFirstString = ' je jednostavna aplikacija napravljena u ';
 const String whatIsThisSecondString = 'Flutteru';
 const String whatIsThisThirdString = '. 🐦';
 const String whatIsThisFourthString =
@@ -258,23 +255,20 @@ const String whyThirdString = ' Htio sam napraviti nešto novo koristeći ';
 const String whyFourthString = 'Flutter';
 const String whyFifthString = ' . 👨‍💻';
 const String whySixthString = '2.';
-const String whySeventhString =
-    ' Tražim posao pa sam htio automatizirati proces. 🏎️';
+const String whySeventhString = ' Tražim posao pa sam htio automatizirati proces. 🏎️';
 
 const String howTitleString = 'Kako radi? 👷‍♂️';
 const String howFirstString = '1.';
 const String howSecondString =
     ' Aplikacija dohvaća informacije sa službenih stranica firmi koje mi se sviđaju i u kojima bih htio raditi. 🏢';
 const String howThirdString = '2.';
-const String howFourthString =
-    ' Pronađe naslove poslova sa svih stranica i spremi ih u ';
+const String howFourthString = ' Pronađe naslove poslova sa svih stranica i spremi ih u ';
 const String howFifthString = 'Map';
 const String howSixthString = ' od relevantne firme. 📦';
 const String howSeventhString = '3.';
 const String howEighthString = ' Filtrira te ';
 const String howNinthString = 'Mape';
-const String howTenthString =
-    ' i prikazuje informacije relevantne za korisnika. 🧹';
+const String howTenthString = ' i prikazuje informacije relevantne za korisnika. 🧹';
 const String howFinalString =
     'Korisnik može pretraživati poslove ili vidjeti sve aktivne oglase odabrane tvrtke. 👨‍💼';
 
@@ -291,5 +285,4 @@ const String ferdinandSeventhString = 'Zagrebom';
 const String ferdinandEighthString =
     ', a ovdje nema posla kojemu se nadate, spomenite mu da biste cijenili kad bi se malo više potrudio. 🙃';
 
-const String goodLuckString =
-    'Želim vam sreću u potrazi za željenim poslom! 🍀';
+const String goodLuckString = 'Želim vam sreću u potrazi za željenim poslom! 🍀';

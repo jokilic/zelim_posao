@@ -107,9 +107,7 @@ class _HomePageState extends State<HomePage> {
               selectedCategory = null;
               searchJobs(jobQuery);
               // If the search finds a job, set AppState.positiveSearch
-              (allFilteredJobs.isNotEmpty)
-                  ? appState = AppState.positiveSearch
-                  : appState = AppState.negativeSearch;
+              (allFilteredJobs.isNotEmpty) ? appState = AppState.positiveSearch : appState = AppState.negativeSearch;
             });
           },
           textEditingController: textEditingController,
@@ -126,18 +124,17 @@ class _HomePageState extends State<HomePage> {
         ),
         Expanded(
           child: ListView(
+            physics: BouncingScrollPhysics(),
             children: [
               // Search query got some results, show the jobs
-              if (appState == AppState.positiveSearch)
-                SearchResults(allFilteredJobs),
+              if (appState == AppState.positiveSearch) SearchResults(allFilteredJobs),
 
               // User pressed on a category, show jobs from desired company
               if (selectedCategory != null) buildCategoryResults(),
 
               // Search query got no results, show 'No jobs found & Popular Jobs' screen
               if (appState == AppState.negativeSearch ||
-                  (appState == AppState.popularSearch &&
-                      allFilteredPopularJobs.isEmpty))
+                  (appState == AppState.popularSearch && allFilteredPopularJobs.isEmpty))
                 Column(
                   children: [
                     CenterScreenWidget(
@@ -160,8 +157,7 @@ class _HomePageState extends State<HomePage> {
                 ),
 
               // Show 'Popular Jobs' boxes
-              if (appState == AppState.popularSearch)
-                SearchResults(allFilteredPopularJobs),
+              if (appState == AppState.popularSearch) SearchResults(allFilteredPopularJobs),
 
               // 'Popular Jobs & Ferdinand's message' get shown when the app starts
               if (appState == AppState.started)

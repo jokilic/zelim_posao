@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'package:html/parser.dart';
 
 import '../../constants.dart';
 import '../../network/network.dart';
@@ -15,10 +15,12 @@ Future<Map> getJobsSpeck() async {
     };
   }
 
-  var decodedSpeck = jsonDecode(rawSpeck);
+  var parsedSpeck = parse(rawSpeck);
+
+  List parsedJobs = parsedSpeck.getElementsByClassName('PageSectionJobs_title__1HkPn');
 
   List<String> jobs = [];
-  decodedSpeck.forEach((job) => jobs.add(job['title']['rendered'].trim()));
+  parsedJobs.forEach((job) => jobs.add(job.text.trim()));
 
   Map finalJobs = {
     'company': speck,

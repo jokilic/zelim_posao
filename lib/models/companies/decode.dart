@@ -17,7 +17,7 @@ Future<Map> getJobsDecode() async {
 
   var parsedDecode = parse(rawDecode);
 
-  List parsedJobs = parsedDecode.getElementsByClassName('job__title');
+  List parsedJobs = parsedDecode.getElementsByTagName('a');
 
   List<String> jobs = [];
   parsedJobs.forEach((job) => jobs.add(job.text.trim()));

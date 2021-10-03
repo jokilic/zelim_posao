@@ -17,12 +17,10 @@ Future<Map> getJobsMicroblink() async {
 
   var parsedMicroblink = parse(rawMicroblink);
 
-  List parsedJobsContainer = parsedMicroblink.getElementsByClassName('mb-job');
-
-  List parsedJobs;
+  List parsedJobs = parsedMicroblink.getElementsByClassName('talentlyft-job-post standard bg-blue');
 
   List<String> jobs = [];
-  parsedJobsContainer.forEach((job) {
+  parsedJobs.forEach((job) {
     parsedJobs = job.getElementsByClassName('title');
     jobs.add(parsedJobs[0].text.trim());
   });

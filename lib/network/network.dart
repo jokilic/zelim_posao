@@ -7,11 +7,15 @@ class Network {
   Network(this.url);
 
   Future getData() async {
-    http.Response response = await http.get(Uri.parse(url));
+    try {
+      http.Response response = await http.get(Uri.parse(url));
 
-    if (response.statusCode == 200)
-      return response.body;
-    else
+      if (response.statusCode == 200)
+        return response.body;
+      else
+        return 'Problems fetching jobs';
+    } catch (e) {
       return 'Problems fetching jobs';
+    }
   }
 }

@@ -38,6 +38,7 @@ class InfoScreen extends StatelessWidget {
                 SizedBox(height: 64.0),
                 Expanded(
                   child: ListView(
+                    physics: BouncingScrollPhysics(),
                     children: [
                       WhatIsThisText(),
                       SizedBox(height: 20.0),
